@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 533px;
+            height: 300px;
+            margin: 150px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        ul {
+            list-style: none;
+            width: 3731px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        li {
+            width: 533px;
+            height: 300px;
+            float: left;
+        }
+    </style>-->
+</head>
+<body>
+<div id="box">
+    <ul id="ul">
+        <li><img src="img/1.jpg" alt="" width="800" height="640"/></li>
+        <li><img src="img/2.jpg" alt="" width="800" height="640"/></li>
+        <li><img src="img/3.jpg" alt="" width="800" height="640"/></li>
+        <li><img src="img/4.jpg" alt="" width="800" height="640"/></li>
+        <li><img src="img/5.jpg" alt="" width="800" height="640"/></li>
+        <li><img src="img/1.jpg" alt="" width="800" height="640"/></li>
+    </ul>
+</div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.12.3/jquery.js"></script>
+<script>
+    $(function () {
+        $('*').css({
+            padding: '0',
+            margin: '0'
+        });
+        $('#ul').css({
+            width: '3731px',
+            listStyle: 'none',
+            position: 'absolute',
+            top: '0',
+            left: '0'
+        });
+        $('#box').css({
+            width:'533px',
+        height:'300px',
+        margin:'150px auto',
+        overflow:'hidden',
+        position:'relative'
+        });
+        $('img').css({
+            width:'533px',
+            height:'300px'
+
+        });
+        $('li').css({
+        float:'left'
+        });
+        /*var a = document.getElementById('b');
+        var box = document.getElementById('box');*/
+        var index = 0;
+        var timer = null;
+        timer = setInterval(function () {
+            index -= 5;
+            index = index <= -3198 ? 0 : index;
+            $('#ul').css('left',index);
+            /*ul.style.left = index + 'px';*/
+        }, 30);
+        box.onmouseover = function () {
+            timer=clearInterval(timer);
+        };
+        box.onmouseout = function () {
+            timer = setInterval(function () {
+                index -= 5;
+                index = index <= -3198 ? 0 : index;
+                $('#ul').css('left',index);
+               /* ul.style.left = index + 'px';*/
+            }, 30)
+        }
+    })
+</script>
+</html>
+<!--
+var a=document.getElementById ('b');
+var box=document.getElementById ('box');
+var index=0;
+var timer=null;
+timer =setInterval(function(){
+index-=5;
+index=index<=-3198 ? 0:index;
+a.style.left=index+'px';
+},30 );
+box.onmouseover =function (){
+clearInterval (timer );
+};
+box.onmouseout =function (){
+timer =setInterval(function(){
+index-=5;
+index=index<=-3198 ? 0:index;
+a.style.left=index+'px';
+},30 );
+}-->
